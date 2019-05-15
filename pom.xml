@@ -43,7 +43,7 @@
 				<version>1.1.2</version>
 				<configuration>
 					<to>
-						<image>${env.CI_REGISTRY}/rafael.santana/jib-demo</image>
+						<image>${env.CI_REGISTRY}/${env.CI_PROJECT_PATH}</image>
 						<auth>
 							<username>gitlab-ci-token</username>
 							<password>${env.CI_JOB_TOKEN}</password>
