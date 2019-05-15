@@ -1,0 +1,22 @@
+stages:
+- build
+- docker
+
+cache:
+  paths:
+  - .m2/
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2"
+
+build:
+  image: maven:3.6.0-jdk-8-alpine
+  stage: build
+  script:
+  - mvn clean install -B
+
+docker:
+  stage: docker
+  image: maven:3.6.0-jdk-8-alpine
+  script:
+    - mvn clean compile jib:build -B
